@@ -2,9 +2,10 @@ FROM node:14-buster
 
 ENV myVar1="test my var1"  
 
-#RUN chown -R root:root /root
+RUN chown -R root:root /root
 WORKDIR /root
 ADD . ./
+VOLUME ["."]
 
 #USER ${user}
 #USER root
