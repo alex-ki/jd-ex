@@ -6,5 +6,6 @@ WORKDIR /root
 ADD . ./
 
 RUN chmod +x /root/entrypoint.sh
-
+RUN ["chmod", "+x", "/root/entrypoint.sh"]
 ENTRYPOINT ["/root/entrypoint.sh"] 
+RUN ["chmod", "+x", "/root/entrypoint.sh"]
