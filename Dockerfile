@@ -21,5 +21,5 @@ RUN ["chmod", "+x", "entrypoint.sh"]
 
 
 
-ENTRYPOINT /root/entrypoint.sh
+ENTRYPOINT []
  
