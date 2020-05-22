@@ -5,12 +5,12 @@ ENV myVar1="test my var1"
 WORKDIR /root
 ADD . ./
 
+ENV USER root
+ENV WORK_DIR_PATH /root
+RUN mkdir -p $WORK_DIR_PATH && chown -R $USER:$USER $WORK_DIR_PATH
+WORKDIR $WORK_DIR_PATH
 
-RUN ["chmod", "755", "/root/entrypoint.sh"]
-RUN ["chmod", "755", "./entrypoint.sh"]
-RUN ["chmod", "755", "entrypoint.sh"]
-
- 
+  
 
 ENTRYPOINT ["./entrypoint.sh"]  
  
