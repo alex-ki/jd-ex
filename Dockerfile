@@ -9,8 +9,7 @@ RUN chown -R root /root
 
 #USER ${user}
 #USER root
-
-WORKDIR $WORK_DIR_PATH
+ 
 
 RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
 RUN ["chmod", "+rwx", "./entrypoint.sh"]
