@@ -9,13 +9,9 @@ ADD . ./
 #USER ${user}
 USER root
 
-RUN chmod +x /root/entrypoint.sh
-RUN chmod +x ./entrypoint.sh
-RUN chmod +x entrypoint.sh
-
-RUN ["chmod", "+x", "/root/entrypoint.sh"]
-RUN ["chmod", "+x", "./entrypoint.sh"]
-RUN ["chmod", "+x", "entrypoint.sh"]
+RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
+RUN ["chmod", "ugo+rwx", "./entrypoint.sh"]
+RUN ["chmod", "ugo+rwx", "entrypoint.sh"]
 
 
 #USER ${user}
