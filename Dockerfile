@@ -6,20 +6,26 @@ WORKDIR /root
 ADD . ./
 
 RUN chown -R root /root
-
-#USER ${user}
-#USER root
  
+ 
+USER root
+
+RUN adduser docker users
+USER docker
 
 RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
 RUN ["chmod", "+rwx", "./entrypoint.sh"]
 RUN ["chmod", "+x", "entrypoint.sh"]
 
 
-#USER ${user}
+RUN adduser jenkins users
+USER jenkins
+
+RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
+RUN ["chmod", "+rwx", "./entrypoint.sh"]
+RUN ["chmod", "+x", "entrypoint.sh"]
+ 
 
 
-
-
-ENTRYPOINT []
+ENTRYPOINT ["entrypoint.sh"]
  
