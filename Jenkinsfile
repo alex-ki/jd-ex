@@ -1,9 +1,17 @@
 pipeline {
-    agent { dockerfile true }
+    agent none
     stages {
-        stage('DockerTest') {
+        stage('Docker Pre') {
+            agent any
             steps {
-                echo 'Hello world'
+                echo 'Hello test1'
+                sh 'ls'
+            }
+        }
+        stage('DockerTest') {
+            agent { dockerfile true }
+            steps {
+                echo 'Hello test2'
                 sh 'ls'
                 sh 'echo $PATH'
                 sh 'echo myVar1 = $myVar1'
