@@ -19,5 +19,5 @@ RUN ["chmod", "+x", "./entrypoint.sh"]
 RUN ["chmod", "+x", "entrypoint.sh"]
 
 
-ENTRYPOINT ["sh", "/root/entrypoint.sh"]
+CMD ["sh", "/root/entrypoint.sh"]
  
