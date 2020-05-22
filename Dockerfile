@@ -10,7 +10,14 @@ ENV WORK_DIR_PATH /root
 RUN mkdir -p $WORK_DIR_PATH && chown -R $USER:$USER $WORK_DIR_PATH
 WORKDIR $WORK_DIR_PATH
 
-  
+RUN chmod +x /root/entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+RUN chmod +x entrypoint.sh
+
+RUN ["chmod", "+x", "/root/entrypoint.sh"]
+RUN ["chmod", "+x", "./entrypoint.sh"]
+RUN ["chmod", "+x", "entrypoint.sh"]
+
 
 ENTRYPOINT ["./entrypoint.sh"]  
  
