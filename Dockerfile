@@ -6,7 +6,7 @@ RUN chown -R root:root /root
 WORKDIR /root
 ADD . ./
 
-USER ${user}
+#USER ${user}
 USER root
 
 RUN chmod +x /root/entrypoint.sh
@@ -18,7 +18,7 @@ RUN ["chmod", "+x", "./entrypoint.sh"]
 RUN ["chmod", "+x", "entrypoint.sh"]
 
 
-USER ${user}
+#USER ${user}
 
 
 
