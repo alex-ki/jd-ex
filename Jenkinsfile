@@ -1,8 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:14-buster' }
+    }
     stages {
-        stage('Test') {
+        stage('DockerTest') {
             steps {
+                sh 'node --version'
                 echo 'Hello world'
             }
         }
