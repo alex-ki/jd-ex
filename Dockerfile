@@ -19,5 +19,5 @@ ADD . ./
 
 
 
-ENTRYPOINT ["sh", "ls"]
+ENTRYPOINT ["entrypoint.sh"]
  
