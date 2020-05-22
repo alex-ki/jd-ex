@@ -5,8 +5,7 @@ ENV myVar1="test my var1"
 WORKDIR /root
 ADD . ./
 
-RUN chown -R root:root root
-RUN chown -R root:root /root
+RUN chown -R root /root
 
 #USER ${user}
 #USER root
