@@ -5,14 +5,13 @@ ENV myVar1="test my var1"
 RUN chown -R root:root /root
 WORKDIR /root
 ADD . ./
-VOLUME ["."]
 
 #USER ${user}
 #USER root
 
-#RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
-#RUN ["chmod", "ugo+rwx", "./entrypoint.sh"]
-#RUN ["chmod", "ugo+rwx", "entrypoint.sh"]
+RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
+RUN ["chmod", "+rwx", "./entrypoint.sh"]
+RUN ["chmod", "+x", "entrypoint.sh"]
 
 
 #USER ${user}
