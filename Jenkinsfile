@@ -6,7 +6,7 @@ pipeline {
         stage('DockerTest') {
             steps {
                 echo 'Hello world'
-                ls
+                sh 'ls'
                 sh 'echo $PATH'
                 sh 'echo myVar1 = $myVar1'
             }
