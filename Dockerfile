@@ -9,14 +9,7 @@ RUN chown -R root /root
  
  
 USER root
-
-RUN adduser docker users
-USER docker
-
-RUN ["chmod", "ugo+rwx", "/root/entrypoint.sh"]
-RUN ["chmod", "+rwx", "./entrypoint.sh"]
-RUN ["chmod", "+x", "entrypoint.sh"]
-
+ 
 
 RUN adduser jenkins users
 USER jenkins
