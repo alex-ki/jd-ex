@@ -1,12 +1,6 @@
 pipeline {
-    agent none
-    stages {   
-        stage('Docker Run') {
-            agent { dockerfile true }
-            steps {
-                sh "ls /"
-            }
-        }
+    agent { dockerfile true }
+    stages {  
         stage('Docker Test') {
             steps {
                 echo 'Hello test1'
