@@ -5,7 +5,10 @@ ENV myVar1="test my var1"
 WORKDIR /root
 ADD . ./
 
-RUN chown -R root /root
+ADD entrypoint.sh .
+RUN chmod ugo+rwx /entrypoint.sh
+
+#RUN chown -R root /root
  
  
 USER root
